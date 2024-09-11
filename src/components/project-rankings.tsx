@@ -29,7 +29,7 @@ const projects: Project[] = [
     title: "ICPC 组队平台",
     description:
       "一个中心化的系统，允许没有固定团队的学生注册并被匹配到具有类似经验的学生。",
-    tags: ["开发", "全文搜索引擎", "数据库", "Outlook接入", "UI/UX"],
+    tags: ["开发", "数据库", "Outlook接入", "UI/UX"],
     tier: 0,
   },
   {
@@ -71,6 +71,46 @@ const projects: Project[] = [
     description:
       "一个帮助Course Admin和 Lecturer 管理小组内成员冲突并公平地调整个人贡献的系统。",
     tags: ["开发", "数据库", "Github接入", "Jira接入", "Outlook接入", "UI/UX"],
+    tier: 0,
+  },
+  {
+    id: "PRJ036",
+    title: "UNSW Igive | 50周年后的更新",
+    description:
+      "帮助新南CSE重新制作一个Igive系统 来取代目前的Give系统，帮助老师和学生自动化的提交作业和批改作业。（意义非凡，青史留名）",
+    tags: ["开发", "数据库", "脚本"],
+    tier: 0,
+  },
+  {
+    id: "PRJ040",
+    title: "转换数据集为知识图谱 (Knowledge Graph)",
+    description:
+      "一个允许用户录入数据集，定义关系，然后转换为知识图谱的系统。（有可能踩雷）",
+    tags: ["开发", "数据库", "Neo4j", "数据可视化"],
+    tier: 1,
+  },
+  {
+    id: "PRJ041",
+    title: "CO2 排量查询",
+    description:
+      "一个允许用户查询CO2排量的系统。原本的系统是一个Excel表格，现在需要一个现代化的系统来取代它。允许用户输入材料的种类和数量来计算CO2的排放量。新的系统需要包含图表和表格。",
+    tags: ["开发", "数据库", "数据可视化", "UI/UX"],
+    tier: 1,
+  },
+  {
+    id: "PRJ046",
+    title: "项目竞赛平台",
+    description:
+      "开发一个支持项目竞赛管理的网络应用程序，帮助组织者成功举办活动并让参与者有效参与。（工作量较大，而且对开发流程和质量比较严格）",
+    tags: ["开发", "数据库", "微服务", "CI/CD", "实时聊天", "UI/UX"],
+    tier: 1,
+  },
+  {
+    id: "PRJ047",
+    title: "项目-专家 匹配系统",
+    description:
+      "开发一个网页平台，匹配公司发布的项目，和有意愿参与项目的个人。（难度简单，意义不明，感觉像凑数发福利的）",
+    tags: ["开发", "数据库", "CI/CD", "UI/UX"],
     tier: 0,
   },
 ];
