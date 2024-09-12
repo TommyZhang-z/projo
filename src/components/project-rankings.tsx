@@ -122,14 +122,6 @@ const projects: Project[] = [
     tags: ["开发", "数据库", "UI/UX", "付款"],
     tier: 1,
   },
-  {
-    id: "PRJ074",
-    title: "项目-专家 匹配系统",
-    description:
-      "开发一个网页平台，匹配公司发布的项目，和有意愿参与项目的个人。（难度简单，意义不明，感觉像凑数发福利的）",
-    tags: ["开发", "数据库", "CI/CD", "UI/UX"],
-    tier: 0,
-  },
 ];
 
 export function ProjectRankings() {
@@ -175,37 +167,39 @@ export function ProjectRankings() {
       </Card>
       <ResponsiveMasonry columnsCountBreakPoints={{ 500: 1, 840: 2, 1024: 3 }}>
         <Masonry gutter="10px">
-          {projects.map((project) => (
-            <Card
-              key={project.id}
-              className="flex flex-col break-inside-avoid"
-              // style={{ gridRowEnd: getSpanValue(project) }}
-            >
-              <CardHeader>
-                <div className="flex justify-between items-center">
-                  <Badge variant="outline">{project.id}</Badge>
-                  <Badge
-                    className={`${getTierColor(
-                      project.tier
-                    )} border-none select-none`}
-                  >
-                    Tier {project.tier}
-                  </Badge>
-                </div>
-                <CardTitle className="mt-2">{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary">
-                      {tag}
+          {projects
+            .sort((a, b) => a.tier - b.tier)
+            .map((project) => (
+              <Card
+                key={project.id}
+                className="flex flex-col break-inside-avoid"
+                // style={{ gridRowEnd: getSpanValue(project) }}
+              >
+                <CardHeader>
+                  <div className="flex justify-between items-center">
+                    <Badge variant="outline">{project.id}</Badge>
+                    <Badge
+                      className={`${getTierColor(
+                        project.tier
+                      )} border-none select-none`}
+                    >
+                      Tier {project.tier}
                     </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                  </div>
+                  <CardTitle className="mt-2">{project.title}</CardTitle>
+                  <CardDescription>{project.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <Badge key={tag} variant="secondary">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
         </Masonry>
       </ResponsiveMasonry>
     </div>
