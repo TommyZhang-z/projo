@@ -165,9 +165,9 @@ export function ProjectRankings() {
           </Button>
         </div>
       </header>
-      <Card className="w-full bg-[url('/cover.jpg')] dark:bg-[url('/cover-dark.jpg')] bg-cover bg-center mb-[10px] transition-opacity text-center animate-bg-size border-none py-24">
+      <Card className="w-full bg-[url('/cover.jpg')] dark:bg-[url('/cover-dark.jpg')] bg-cover bg-center mb-[10px] transition-opacity text-center animate-bg-size border-none py-12 md:py-24">
         <CardHeader>
-          <CardTitle className="text-4xl md:text-6xl font-bold">
+          <CardTitle className="text-[max(28px,min(4vw,60px))] font-bold">
             Atlassian Forge Apps
           </CardTitle>
           <CardDescription>伟大无需多言</CardDescription>
