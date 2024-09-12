@@ -113,6 +113,23 @@ const projects: Project[] = [
     tags: ["开发", "数据库", "CI/CD", "UI/UX"],
     tier: 0,
   },
+  {
+    id: "PRJ072",
+    // Crowd-Sourced Online Data Annotation Platform
+    title: "众包在线数据标注平台",
+    description:
+      "开发一个众包在线数据标注平台，允许用户上传数据集，而free lancer可以通过完成标注任务来赚取报酬。",
+    tags: ["开发", "数据库", "UI/UX", "付款"],
+    tier: 1,
+  },
+  {
+    id: "PRJ074",
+    title: "项目-专家 匹配系统",
+    description:
+      "开发一个网页平台，匹配公司发布的项目，和有意愿参与项目的个人。（难度简单，意义不明，感觉像凑数发福利的）",
+    tags: ["开发", "数据库", "CI/CD", "UI/UX"],
+    tier: 0,
+  },
 ];
 
 export function ProjectRankings() {
@@ -132,21 +149,30 @@ export function ProjectRankings() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <header className="flex justify-between items-center mb-6">
-        <div className="flex items-center space-x-4">
-          <h1 className="text-2xl font-bold">Project Rankings</h1>
+      <header className="sticky top-0 z-10 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 pb-6">
+        <div className="flex justify-between items-center py-4">
+          <div className="flex items-center space-x-4">
+            <h1 className="text-2xl font-bold">Project Rankings</h1>
+          </div>
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          >
+            <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <span className="sr-only">Toggle theme</span>
+          </Button>
         </div>
-        <Button
-          variant="outline"
-          size="icon"
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        >
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
       </header>
-      {/* <h1 className="text-3xl font-bold mb-6 text-center">Project Rankings</h1> */}
+      <Card className="w-full bg-[url('/cover.jpg')] dark:bg-[url('/cover-dark.jpg')] bg-cover bg-center mb-[10px] transition-opacity text-center animate-bg-size border-none py-24">
+        <CardHeader>
+          <CardTitle className="text-4xl md:text-6xl font-bold">
+            Atlassian Forge Apps
+          </CardTitle>
+          <CardDescription>伟大无需多言</CardDescription>
+        </CardHeader>
+      </Card>
       <ResponsiveMasonry columnsCountBreakPoints={{ 500: 1, 840: 2, 1024: 3 }}>
         <Masonry gutter="10px">
           {projects.map((project) => (

@@ -9,6 +9,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        bgSize: {
+          "0%": { backgroundSize: "100%" },
+          "100%": { backgroundSize: "150%" },
+        },
+      },
+      animation: {
+        "bg-size": "bgSize 5s infinite alternate",
+      },
       colors: {
         tier0: {
           from: "hsl(var(--color-tier0-from) / <alpha-value>)",

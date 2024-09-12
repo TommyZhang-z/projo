@@ -104,4 +104,19 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+
+  /* @keyframes bgSize {
+    0% {
+      background-size: 100%;
+    }
+
+    100% {
+      background-size: 150%;
+    }
+  }
+
+  .animated-bg {
+    background-size: 100%;
+    animation: bgSize 5s infinite alternate;
+  } */
 }
